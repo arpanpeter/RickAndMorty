@@ -13,8 +13,7 @@ class EpisodeListViewModel : ViewModel() {
     private val repository = EpisodesRepository()
 
     val flow = Pager(
-        // Configure how data is loaded by passing additional properties to
-        // PagingConfig, such as prefetchDistance.
+
         PagingConfig(
             pageSize = Constants.PAGE_SIZE,
             prefetchDistance = Constants.PREFETCH_DISTANCE,

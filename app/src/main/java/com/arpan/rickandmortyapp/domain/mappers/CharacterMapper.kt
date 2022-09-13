@@ -4,12 +4,6 @@ import com.arpan.rickandmortyapp.domain.models.Character
 import com.arpan.rickandmortyapp.network.response.GetCharacterByIdResponse
 import com.arpan.rickandmortyapp.network.response.GetEpisodeByIdResponse
 
-
-/**
- * This class is for converting the response
- * from the GetCharacterByIdResponse network
- * into an internal Character class
- * */
 object CharacterMapper {
 
     fun buildFrom(

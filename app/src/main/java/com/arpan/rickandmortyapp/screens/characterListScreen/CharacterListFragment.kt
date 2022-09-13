@@ -40,7 +40,6 @@ class CharacterListFragment : Fragment() {
 
     private fun onCharacterSelected(characterId: Int) {
 
-        //throw RuntimeException("for FireBase")
 
         val directions =
             CharacterListFragmentDirections.actionCharacterListFragmentToCharacterDetailFragment(

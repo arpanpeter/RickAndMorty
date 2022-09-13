@@ -37,7 +37,7 @@ class CharacterDetailsEpoxyController(
         }
 
         if (character == null) {
-            //todo error state
+
             return
         }
 

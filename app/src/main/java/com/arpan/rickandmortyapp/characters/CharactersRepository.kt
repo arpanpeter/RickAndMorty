@@ -23,7 +23,6 @@ class CharactersRepository {
 
     suspend fun getCharacterById(characterId: Int): Character? {
 
-        //Check the cache for our character
         val cacheCharacter = RickAndMortyCache.characterMap[characterId]
         if (cacheCharacter != null) {
             return cacheCharacter
@@ -39,7 +38,6 @@ class CharactersRepository {
             episodes = networkEpisode
         )
 
-        // Update cache and return value
         RickAndMortyCache.characterMap[characterId] = character
         return character
     }

@@ -6,45 +6,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 
-/*class CharactersDataSource(
-    private val coroutineScope: CoroutineScope,
-    private val repository: CharactersRepository
-) : PagingSource<Int, GetCharacterByIdResponse>() {
 
-    override fun getRefreshKey(state: PagingState<Int, GetCharacterByIdResponse>): Int? {
-        val anchorPosition = state.anchorPosition ?: return null
-        val page = state.closestPageToPosition(anchorPosition) ?: return null
-
-        return page.prevKey?.plus(1) ?: page.nextKey?.minus(1)
-    }
-
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GetCharacterByIdResponse> {
-        val pageNumber: Int = params.key ?: 1
-
-
-        val page = repository.getCharactersPage(pageNumber)
-
-        if (page == null) {
-            return LoadResult.Page(
-                data = emptyList(),
-                prevKey = null,
-                nextKey = null
-            )
-        }
-
-        return LoadResult.Page(
-            data = page.results,
-            prevKey = if (pageNumber == 1) null else pageNumber - 1,
-            nextKey = getPageIndexFromNext(page.info.next)
-        )
-
-
-    }
-
-    private fun getPageIndexFromNext(next: String?) : Int? {
-        return next?.split("?page=")?.get(1)?.toInt()
-    }
-}*/
 class CharactersDataSource(
     private val coroutineScope: CoroutineScope,
     private val repository: CharactersRepository
@@ -85,7 +47,7 @@ class CharactersDataSource(
         params: LoadParams<Int>,
         callback: LoadCallback<Int, GetCharacterByIdResponse>
     ) {
-        // nothing to do
+
     }
 
     private fun getPageIndexFromNext(next: String?) : Int? {

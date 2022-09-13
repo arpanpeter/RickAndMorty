@@ -14,11 +14,6 @@ class CharactersViewModel : ViewModel() {
 
     private val repository = CharactersRepository()
 
-    /*private val pageListConfig: PagingConfig = PagingConfig(
-        pageSize = Constants.PAGE_SIZE,
-        prefetchDistance = Constants.PREFETCH_DISTANCE
-    )*/
-
     private val pageListConfig: PagedList.Config = PagedList.Config.Builder()
         .setPageSize(Constants.PAGE_SIZE)
         .setPrefetchDistance(Constants.PREFETCH_DISTANCE)
